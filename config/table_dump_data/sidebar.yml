@@ -46,3 +46,11 @@
   available_for: logged_in
   weight: 5
   parent: null
+7:
+  title: blog
+  icon_class: 'fa fa-blog'
+  link_class: null
+  url: /blog
+  available_for: both
+  weight: 6
+  parent: null

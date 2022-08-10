@@ -1,1 +1,10 @@
-{  }
+blog_records:
+  title: 'Blog kayıtları'
+  description: 'Son kullanıcıya gösterilen blog kayıtlarını listeleyen sorgu.'
+  key: blog_records
+  filters: '[{"table":"blog","column":"published","comparation":"=","compare_value":"1"}]'
+  result_fields: '[{"table":"blog","column":"ID"},{"table":"blog","column":"title"},{"table":"blog","column":"body"},{"table":"blog","column":"created_at"}]'
+  paging_limit: 10
+  order_by: '[{"table":"blog","column":"created_at","orderdirection":"DESC"}]'
+  result_view_template: custom_card
+  card_template_class: App\Views\BlogViewer

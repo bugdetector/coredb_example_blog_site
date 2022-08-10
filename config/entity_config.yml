@@ -32,3 +32,5 @@ navbar:
       selfKey: "navbar_id"
       foreignKey: "role_id"
       createIfNotExist: false
+blog:
+  class: App\Entity\Blog

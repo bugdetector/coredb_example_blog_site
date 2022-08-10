@@ -1,0 +1,11 @@
+<div class="{{ view.classes|join(" ") }}" {{ view.renderAttributes() }}>
+	{% for row in view.data %}
+		<div class="card m-2">
+			<div class="card-body">
+				<h5 class="card-title">{{ row.title }}</h5>
+				<p class="card-text">{{ row.body|raw }}</p>
+				<a href="{{ constant("BASE_URL") }}/blog/{{ row.ID }}" class="btn btn-primary">{{ t("view") }}</a>
+			</div>
+		</div>
+	{% endfor %}
+</div>

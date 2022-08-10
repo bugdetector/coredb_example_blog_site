@@ -1,0 +1,31 @@
+table_name: blog
+table_comment: 'Blog gönderileri'
+fields:
+  title:
+    type: short_text
+    column_name: title
+    primary_key: false
+    autoIncrement: false
+    isNull: false
+    isUnique: true
+    default: null
+    comment: 'Blog başlığı'
+    length: '255'
+  body:
+    type: long_text
+    column_name: body
+    primary_key: false
+    autoIncrement: false
+    isNull: true
+    isUnique: false
+    default: null
+    comment: 'Blog içeriğinin HTML''i'
+  published:
+    type: checkbox
+    column_name: published
+    primary_key: false
+    autoIncrement: false
+    isNull: true
+    isUnique: false
+    default: null
+    comment: 'Blog yayında mı?'

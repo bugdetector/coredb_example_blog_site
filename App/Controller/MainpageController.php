@@ -9,7 +9,6 @@ use Src\Theme\ThemeInteface;
 
 class MainpageController extends BaseController
 {
-
     public $content;
 
     public function getTheme(): ThemeInteface

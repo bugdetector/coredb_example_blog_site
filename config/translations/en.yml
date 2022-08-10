@@ -224,3 +224,8 @@ parent: Parent
 language: Language
 navbar: 'Header menu'
 dark-mode: 'Dark Mode'
+blog: Blog
+blody: Body
+published: Published
+body: Body
+view: View
