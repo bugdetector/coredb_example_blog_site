@@ -11,6 +11,7 @@ use Src\Controller\NotFoundController;
 use Src\Entity\Translation;
 use Src\Form\SearchForm;
 use Src\Theme\ThemeInteface;
+use Src\Views\TextElement;
 
 class BlogController extends BaseController
 {
@@ -44,7 +45,9 @@ class BlogController extends BaseController
     public function echoContent()
     {
         if ($this->blog) {
-            return $this->blog->body;
+            return TextElement::create($this->blog->body)
+                ->setIsRaw(true)
+                ->addClass("p-3");
         } else {
             return $this->blogForm;
         }
