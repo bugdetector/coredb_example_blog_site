@@ -1,0 +1,23 @@
+table_name: blogs_tags
+table_comment: 'Blog ve tag N-N ilişkisi'
+fields:
+  blog:
+    type: table_reference
+    column_name: blog
+    primary_key: false
+    autoIncrement: false
+    isNull: true
+    isUnique: false
+    default: null
+    comment: 'Blog referansı'
+    reference_table: blog
+  tag:
+    type: table_reference
+    column_name: tag
+    primary_key: false
+    autoIncrement: false
+    isNull: true
+    isUnique: false
+    default: null
+    comment: 'Tag referansı'
+    reference_table: tag

@@ -8,6 +8,7 @@ use CoreDB\Kernel\Database\DataType\ShortText;
 use CoreDB\Kernel\Database\DataType\LongText;
 use CoreDB\Kernel\Database\DataType\Checkbox;
 use CoreDB\Kernel\Database\SelectQueryPreparerAbstract;
+use CoreDB\Kernel\EntityReference;
 use Src\Entity\Translation;
 use Src\Views\Link;
 use Src\Views\TextElement;
@@ -29,6 +30,9 @@ class Blog extends Model
      * Blog içeriğinin HTML'i
      */
     public LongText $body;
+
+    public EntityReference $tag;
+
     /**
      * @var Checkbox $published
      * Blog yayında mı?
@@ -53,6 +57,8 @@ class Blog extends Model
     public function getResultQuery(): SelectQueryPreparerAbstract
     {
         return \CoreDB::database()->select(self::getTableName(), "b")
+            ->leftjoin("blogs_tags", "bt", "bt.blog = b.ID")
+            ->leftjoin(Tag::getTableName(), "tag", "tag.ID = bt.tag")
             ->select("b", [
                 "ID as edit_actions", // edit_actions düzenleme ve silme butonları için gereklidir.
                 "ID",
@@ -60,7 +66,7 @@ class Blog extends Model
                 "published",
                 "created_at",
                 "last_updated"
-            ]);
+            ])->groupBy("b.ID");
     }
 
     public function actions(): array

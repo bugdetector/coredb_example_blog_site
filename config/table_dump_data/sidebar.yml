@@ -52,7 +52,7 @@
   link_class: null
   url: /blog
   available_for: both
-  weight: 6
+  weight: 7
   parent: null
 8:
   title: manage_blog
@@ -60,5 +60,5 @@
   link_class: null
   url: /admin/blog
   available_for: logged_in
-  weight: 7
+  weight: 6
   parent: null

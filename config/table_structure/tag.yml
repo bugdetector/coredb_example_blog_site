@@ -1,0 +1,13 @@
+table_name: tag
+table_comment: 'Blog etiketleri'
+fields:
+  name:
+    type: short_text
+    column_name: name
+    primary_key: false
+    autoIncrement: false
+    isNull: false
+    isUnique: true
+    default: null
+    comment: 'Etiket adı.'
+    length: '255'

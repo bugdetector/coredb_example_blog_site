@@ -34,3 +34,11 @@ navbar:
       createIfNotExist: false
 blog:
   class: App\Entity\Blog
+  manyToMany:
+    tag:
+      mergeTable: blogs_tags
+      selfKey: blog
+      foreignKey: tag
+      createIfNotExist: true
+tag:
+  class: App\Entity\Tag
