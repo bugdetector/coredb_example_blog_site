@@ -54,3 +54,11 @@
   available_for: both
   weight: 6
   parent: null
+8:
+  title: manage_blog
+  icon_class: 'fa fa-list'
+  link_class: null
+  url: /admin/blog
+  available_for: logged_in
+  weight: 7
+  parent: null

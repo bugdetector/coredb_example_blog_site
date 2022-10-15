@@ -2,11 +2,15 @@
 
 namespace App\Entity;
 
+use App\Controller\Admin\BlogController;
 use CoreDB\Kernel\Model;
 use CoreDB\Kernel\Database\DataType\ShortText;
 use CoreDB\Kernel\Database\DataType\LongText;
 use CoreDB\Kernel\Database\DataType\Checkbox;
 use CoreDB\Kernel\Database\SelectQueryPreparerAbstract;
+use Src\Entity\Translation;
+use Src\Views\Link;
+use Src\Views\TextElement;
 
 /**
  * Object relation with table blog
@@ -57,5 +61,25 @@ class Blog extends Model
                 "created_at",
                 "last_updated"
             ]);
+    }
+
+    public function actions(): array
+    {
+        return [
+            Link::create(
+                BlogController::getUrl() . "add",
+                TextElement::create(
+                    "<span class='fa fa-plus'></span> " .
+                    Translation::getTranslation("add_new_entity", [
+                        Translation::getTranslation("blog")
+                    ])
+                )->setIsRaw(true)
+            )->addClass("btn btn-sm btn-primary")
+        ];
+    }
+
+    public function editUrl($value = null)
+    {
+        return BlogController::getUrl() . ($value ?: $this->ID);
     }
 }

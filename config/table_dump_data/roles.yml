@@ -1,2 +1,4 @@
 Admin:
   role: Admin
+Editor:
+  role: Editor
